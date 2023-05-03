@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		몽땅연필 키우기
+	</title>
+	<style type="text/css">
+		@font-face {
+		    font-family: 'Polar_Star';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_09@1.0/Polar_Star.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+  		@font-face {
+		    font-family: 'Pretendard-Regular';
+		    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+		    font-weight: 400;
+		    font-style: normal;
+		}
+
+		html{font-family: 'Pretendard-Regular'; font-size: 20px; word-break:keep-all; }
+		h1,body,ul,li,a{margin: 0; padding: 0; }
+		h2{text-align: left; font-family: 'Polar_Star'; font-size: 3rem; color: gray; padding: 0; margin: 0;}
+		h3{text-align: center; font-family: 'Polar_Star'; font-size: 2.5rem; opacity: 0.6; margin: auto;}
+		p{text-align: left; font-size: 0.9rem; line-height: 1.5rem; opacity: 0.5; margin: auto;}
+		header{padding-bottom: 50%;}
+		a,li{font-family: 'Polar_Star'; }
+		li{list-style-type: none;}
+		a{
+			display: block;
+			padding: 10px 15px;
+			padding-top: 6px;
+			background: white;
+			text-decoration: none;
+/*			border-radius: 4px;*/
+			color : #FF9292;
+		}
+/*		a:hover{background: #FF9292;
+			color:white;
+			transition:all 0.5s}*/
+
+		a.hover:hover{background: #FF9292;
+			color:white;
+			transition:all 0.5s}
+/*		hr{margin: 0; height:1px; border: none; }*/
+		p.small{font-size: 0.6rem; opacity: 0.35; width: 150px; line-height: 0.9rem; padding-bottom: 20px; padding-top: 20px;}
+		p.step{font-size: 1.5rem; font-family: Polar_Star;}
+		p.footer{font-size: 0.7rem; color: white; text-align: left; line-height: 1.2rem;}
+
+		h3.level{text-align: left; padding-bottom: 40px; padding-top:20px;}
+
+
+
+
+
+		.wrapper{width: 100%; margin:auto;}
+		.wrapper2{width: 1200px; margin: auto;}
+		.wrapper-index{width: 150px; margin: auto;}
+		.wrapper-level{height:100vh; width: 1200px; margin:auto;}
+		.flex{display:flex; justify-content: space-between; flex-wrap: wrap;}
+
+		.col-2{width:47%; padding-top: 200px; padding-bottom: 100px; padding-left: 10px;}
+		.col-index{margin: 0; padding:20px; background-color: white; box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.05); width:200px; }
+		.col-index-top{margin: 0; padding:20px; padding-top:0px; padding-bottom:0px; background-color: #FF9292; width:200px; height: 2.5px;}
+		.col-footer{width: 20%;}
+
+
+		.bg-white{background-color: rgba(255,255,255); box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.05);}
+		.bg-pink{background: #F7DADA; padding-top: 150px; padding-bottom: 150px; font-size: 11px; line-height: 18px;}
+		.bg-green{background: #606D64;}
+
+		.menu{width: 400px;}
+		a.btn{
+			display: block;
+			line-height: 30px;
+			text-align: center;
+			position: fixed;
+			bottom: -190px; 
+			right: 0px;
+			margin: 0 auto;
+			background: none;
+			animation-name:topdown;
+			animation-duration: 2s;
+			animation-delay: 3s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		a.none{padding: 0; margin: 0; color: none;}
+
+		@keyframes topdown{
+			from{bottom:-190px;}
+			to{bottom:-50px;}
+		}
+
+		.first-img{
+			background: url(first.png);
+			background-size:100%;
+			background-position: center;
+			background-attachment: fixed;
+			margin: auto;
+			height: 50vh;
+			margin-bottom: 0;
+			background-repeat: no-repeat;}
+
+		.level-0{background: url(0.png); margin: auto; background-attachment: fixed; background-repeat: no-repeat; background-size: 600px; padding: 300px; background-position: center;}
+		.level-1{background: url(1.png); margin: auto; background-attachment: fixed; background-repeat: no-repeat; background-size: 1920px; background-position: center;}
+		.level-2{background: url(2.png); margin: auto; background-attachment: fixed; background-repeat: no-repeat; background-size: 1920px; background-position: center;}
+		.level-3{background: url(3.png); margin: auto; background-attachment: fixed; background-repeat: no-repeat; background-size: 1920px; background-position: center;}
+		.level-4{background: url(4.png); margin: auto; background-attachment: fixed; background-repeat: no-repeat; background-size: 1920px; background-position: center;}
+		.level-5{background: url(5.png); margin: auto; background-attachment: fixed; background-repeat: no-repeat; background-size: 1920px; background-position: center;}
+		.level-6{background: url(6.png); margin: auto; background-attachment: fixed; background-repeat: no-repeat; background-size: 900px; padding:300px;background-position: center;}
+
+		.concept{background: url(concept.png); margin: auto; background-repeat: no-repeat; background-size: 1920px; height: 2500px; background-position: center;}
+
+
+	</style>
+</head>
+<body>
+	<nav class="bg-white" style="position: fixed; z-index: 1; width: 100%;"> 
+		<div class="wrapper flex">
+			<div><a href="index.html" class="hover">몽땅연필 키우기</a></div>
+				<ul class="menu flex">
+					<li><a href="#background" class="hover">브랜드 스토리</a></li>	
+					<li><a href="#buy" class="hover">구매하기</a></li>
+					<li><a href="#package" class="hover">패키지 구성</a></li>
+					<li><a href="#growth" class="hover">키우는 법</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<header class="first-img">
+		<!-- <h1>몽땅연필 키우기</h1> -->
+		<div class="wrapper">
+		<!-- <div class="wrapper2 flex"> -->
+			<!-- <h3 style="padding-top:500px; text-align:center;">몽땅연필을 키워 쓰는 화분키트</h3> -->
+			<!-- <p style="text-align: center;"> <몽땅연필을 키워쓰는 화분 키트, 몽땅> </p> -->
+<!-- 		<div class="col-2">
+				<h3 style="text-align: left;">몽땅</h3>	
+			</div>
+			<div class="col-2">
+				<p>몽땅연필을 키워쓰는 화분</p>	
+			</div> -->
+		<!-- </div> -->
+	</div>
+	</header>
+
+
+	<section>
+		<a name="background" style="margin: 0; padding:0;"></a>
+		<div class="wrapper flex bg-pink">
+			<div class="wrapper">
+				<h3 style="font-size: 2rem; padding-top:2rem;">다 쓴 몽땅연필, 버리긴 너무 아깝지 않나요?</h3>
+				<p style="margin: auto; width:700px; padding-top:4rem;">연필을 쓰다 보면 길었던 연필도 어느 순간 너무 짧아져버려요. 나무는 나뭇가지를 잘라 옮겨 심어도 큰 나무로 자라던데. 연필은 불가능할까요? 몽땅연필 키우기 브랜드 '몽땅'에 주목해주세요!</p>
+				<p style="margin:auto;width: 55%; padding-top: 2rem; font-size:0.6rem; text-align:center; opacity:0.3">- 2023, 몽땅연구소 -</p>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	<section>
+		<div class="wrapper2 flex"> 
+			<div class="col-2">
+				<a name="buy" class="none;"></a>
+				<img src="thumbnail.png" width="100%;">
+			</div>
+			<div class="col-2">
+					<h2 style="padding-top: 10px;">몽땅연필 키우기</h2>
+					<p style="padding-left: 12px; color: gray; padding-top: 30px;">Pot package for Pencil stub</p>
+					<p style="padding-left: 12px; color: gray; padding-top: 190px;">몽땅 화분 + 쑥쑥 연필 3자루</p>
+					<p style="padding-left: 12px; color: gray;padding-top: 10px; padding-bottom: 115px;">12,000won</p>
+					<li style="padding-top: 0px;"><a href="#buy" style="border-radius: 300px; background-color:#FF9292; color: white; padding-bottom: 13px; padding-top: 3px; text-align:center; font-size: 2rem;">구매할래요</a></li>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<section style="position:fixed;bottom: 5px;right:5px;">
+		<a href="#buy"class="btn"><img src="btn.png" style="width:50%;"></a>
+	</section>
+
+	<a name="package"></a>
+	<section style="padding-top: 50px; padding-bottom:200px;">
+		
+		<div class="wrapper">
+			<div class="wrapper2">
+				<p class="step">< 패키지 구성 ></p>
+				
+				<img src="package.png" width="100%">
+
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="wrapper flex">
+		<div class="wrapper2">
+			<h3>짧아져버린 몽땅연필, <br>얼른 몽땅화분에 심어주세요!</h3>
+			<p style="margin: auto; width:700px; padding-top:1rem; text-align: center; padding-top: 50px; padding-bottom:20px;">쑥쑥연필은 짧아질 수록 연필 몸체가 검정색에 가까워져요.<br>더 이상 사용하기 힘들정도로 짧아지셨나요? 버리지 말고 몽땅화분에 심어주세요!</p>
+		</div>
+		</div>
+		<div class="level-0"></div>
+
+	</section>
+
+
+
+
+
+
+
+
+	<section>
+		<!-- <hr class="level-line"> -->
+		<a name="growth" class="none"></a>
+		<div class="level-1 wrapper">
+			<div class="wrapper-level">
+				<div class="col-index-top">					
+					<a name="growth" class="none"></a>
+				</div>
+				<div class="col-index">
+					<div class="wrapper-index">
+						<h3 class="level">1. 심는 법</h3>
+						<p>화분의 1/2만큼 흙을 채운 뒤 몽땅연필을 수직으로 세워 심어주세요! 이 때 몽땅연필의 끝 심 부분만 남기고 흙을 덮어주어야 해요.</p>
+						<p class="small"> 반드시 몸체가 남아있어야 해요. 연필심, 톱밥가루 만으로는 키울 수 없어요.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<!-- <hr class="level-line"> -->
+		<div class="level-2 wrapper">
+			<div class="wrapper-level">
+				<div class="col-index-top"></div>
+				<div class="col-index">
+					<div class="wrapper-index">
+						<h3 class="level">2. 물주기</h3>
+						<p>겉흙이 말랐을 때 흠뻑 물을 주세요.</p>
+						<p class="small"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<!-- <hr class="level-line"> -->
+		<div class="level-3 wrapper">
+			<div class="wrapper-level">
+				<div class="col-index-top"></div>
+				<div class="col-index">
+					<div class="wrapper-index">
+						<h3 class="level">3. 성장</h3>
+						<p>최대 성장길이는 15-16cm이에요. 새 연필로 성장하기까지 걸리는 시간은 환경마다 다르지만 대체로 6-7일 정도에요.</p>
+						<p class="small"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<!-- <hr class="level-line"> -->
+		<div class="level-4 wrapper">
+			<div class="wrapper-level">
+				<div class="col-index-top"></div>
+				<div class="col-index">
+					<div class="wrapper-index">
+						<h3 class="level">4. 팁</h3>
+						<p>햇빛을 쐬어주면 더 빨리 자라요!</p>
+						<p class="small">다만 햇빛에서는 해충 '지우개가루'가 나타날 수 있으니 주의해주세요.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<!-- <hr class="level-line"> -->
+		<div class="level-5 wrapper">
+			<div class="wrapper-level">
+				<div class="col-index-top"></div>
+				<div class="col-index">
+					<div class="wrapper-index">
+						<h3 class="level">5. 수확</h3>
+						<p>수확시기에 가까워지면 연필의 색이 붉어져요. 이 때 연필을 수확하면 돼요.</p>
+						<p class="small">수확시기 이전에도 수확을 할 수는 있지만, 추후 연필 사용 시 심이 잘 부러지는 현상이 나타날 수 있어요.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="wrapper flex">
+			<h3 style="padding: 100px; width: 1200px;">쨘, 몽땅연필이 몽땅 새 연필로 자랐어요!</h3>
+		</div>
+		<div class="level-6"></div>
+	</section>
+
+
+	<section>
+		<div class="wrapper">
+			<div class="wrapper2">
+				<img src="display.png" width="100%" style="display: block;">
+			</div>
+		</div>
+	</section>
+
+<!-- 	<section>
+		<div class="wrapper">
+			<div class="wrapper2">
+				<img src="concept.png" width="100%" style="display:block;">
+			</div>
+		</div>
+	</section> -->
+
+	<section>
+		<div class="wrapper2">
+		<div class="concept wrapper flex">
+			<!-- <div class="wrapper2"> -->
+				<h3 style="margin-top: 400px; padding: 100px; width: 1200px; line-height: 3.2rem;">'몽땅'과 함께 <br> 몽땅연필들을 키워 쓰며, 우리의 환경을 보호해요!</h3>
+			<!-- </div> -->
+		</div>
+	</div>
+	</section>
+
+	<section class="bg-white" style="padding:300px; padding-top: 100px;">
+		<li style="padding-top: 22px;"><a href="#buy" style="border-radius: 300px; background-color:#FF9292; color: white; padding-bottom: 15px; padding-top: 15px; text-align:center; font-size: 2rem; width: 600px; margin: auto;">구매할래요</a></li>
+	</section>
+
+
+	<footer class="bg-green">
+		<div class="wrapper flex">
+			<div class="wrapper2 flex" style="padding-top:80px; padding-bottom: 70px;">
+				<div class="col-footer">
+					<h3 style="color: white;opacity: 1; line-height:0; text-align: left; padding-top:15px;">몽땅</h3>
+					<p class="footer" style="font-size: 0.9rem; font-family:'Polar_Star';"><br><br>몽땅연필을 키워쓰는 화분</p>
+				</div>
+
+				<div class="col-footer">
+					<p class="footer" style="opacity: 1; padding-bottom: 12px;">About us</p>
+					<p class="footer">Brand Story</p>
+					<p class="footer">Product</p>
+				</div>
+				<div class="col-footer">
+					<p class="footer" style="opacity: 1;padding-bottom: 12px;">Product</p>
+					<p class="footer">Mongttang Pot</p>
+					<p class="footer">Ssooksook Pencil</p>
+				</div>
+				<div class="col-footer">
+					<p class="footer" style="opacity: 1;padding-bottom: 12px;">Designer</p>
+					<p class="footer">Kil Jeongyeon</p>
+					<p class="footer">19100828</p>
+				</div>
+				<div class="col-footer">
+					<p class="footer" style="opacity: 1;padding-bottom: 12px;">Contact</p>
+					<p class="footer">010-9768-4876</p>
+					<p class="footer">kilfamily9768@gmail.com</p>
+				</div>
+			</div>
+			<div class="bg-green" style="width:1200px; margin:auto; padding-bottom: 60px;">
+				<hr>
+				<p class="footer" style="padding-top: 15px;">ⓒ2023. Kil Jeongyeon All rights reserved.</p>
+			</div>
+	</div>
+
+	</footer>
+
+
+</body>
+</html>
